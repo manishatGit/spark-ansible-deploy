@@ -3,9 +3,10 @@
   vars:
     message: "Hello, Welcome to Ansible World!"
   remote_user: root
+
   tasks:
-  - name: Say Hello
-   copy:
-    content: "{{message}}"
-    dest: /etc/hello.txt
-    mode: 0555
+   #Copy Hello message to temp dir
+    - copy:
+       content: "{{message}}"
+       dest: /tmp/hello.txt
+       mode: 0555
