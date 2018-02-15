@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  vars:
+    message: "Hello, Welcome to Ansible World!"
+  remote_user: root
+  tasks:
+  - name: Say Hello
+   copy:
+    content: "{{message}}"
+    dest: /etc/hello.txt
+    mode: 0555
